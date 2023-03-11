@@ -4,9 +4,12 @@
   color: #3E474F;
 }
 
-.accordion__label,
-.accordion__content {
+.accordion__label {
   padding: 14px 18px;
+}
+
+.accordion__content {
+  padding: 5px 18px;
 }
 
 .accordion__label {
@@ -22,22 +25,51 @@
   color: #FFFFFF;
 }
 
-.accordion__label:hover > .cross {
-  background-image: url('./images/white-plus.svg');
-}
-
 .cross {
   width: 18px;
   height: 18px;
   background-image: url('./images/black-plus.svg');
   background-size: contain;
-  transition: transform 0.4s;
+  transition: 0.4s;
 }
 
-.accordion__content img {
+.accordion__label:hover > .cross {
+  background-image: url('./images/white-plus.svg');
+}
+
+.accordion__content {
+/*   display: none;
+  transition: 0.4s; */
+  transition: height 0.5s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+.accordion__content > img {
   max-width: 100%;
 }
 
 .accordion__input {
   display: none;
+  
 }
+
+.accordion__input:checked ~ .accordion__content {
+/*   display: block; */
+  opacity: 1;
+  height: 280px;
+  padding: 14px 18px;
+}
+
+.accordion__input:checked + .accordion__label .cross {
+  transform: rotate(45deg);
+}
+
+.accordion__label:hover ~ .accordion__content {
+    opacity: 1;
+    height: 280px;
+    padding: 14px 18px;
+  }
+
+
