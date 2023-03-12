@@ -1,0 +1,117 @@
+.accordion {
+  width: 100%;
+  font-family: 'Space Mono', monospace;
+  color: #3E474F;
+}
+
+.accordion h1 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.accordion__label {
+  padding: 14px 18px;
+}
+
+.accordion__content {
+  padding: 5px 18px;
+}
+
+.accordion__label {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 3px solid #3E474F;
+  transition: background 0.1s;
+}
+
+.accordion__label:active {
+  background: rgba(0, 0, 0, 0.8) !important;
+}
+
+.cross {
+  width: 18px;
+  height: 18px;
+  background-image: url('./images/black-plus.svg');
+  background-size: contain;
+  transition: 0.5s;
+}
+
+.accordion__content {
+  transition: transform 0.3s ease-out;
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  transform:scaleY(0);
+  transform-origin: top;
+  text-align: center;
+
+}
+
+.accordion__content > img {
+  max-width: 100%;
+}
+
+.accordion__input {
+  display: none;
+}
+
+.accordion__input:checked ~ .accordion__content {
+  opacity: 1;
+  height: 100%;
+  padding: 14px 18px;
+  transform:scaleY(1);
+}
+
+.accordion__input:not(:checked) ~ .accordion__content {
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.accordion__input:checked + .accordion__label .cross {
+  transform: rotate(45deg);
+}
+
+.accordion__label:hover ~ .accordion__content {
+    opacity: 1;
+    height: 100%;
+    padding: 14px 18px;
+    transform:scaleY(1);
+  }
+
+  @media (min-width: 820px) {
+    .accordion {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: auto;
+    }
+    .accordion h1 {
+      font-size: 2.2rem;
+    }
+  }
+
+  @media (min-width: 1980px) {
+    .accordion {
+      font-size: 2rem;
+      max-width: 1500px;
+      margin: auto;
+    }
+    .accordion h1 {
+      font-size: 3rem;
+    }
+    .cross {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  @media (hover: hover) {
+    .accordion__label:hover {
+      background: #3E474F;
+      color: #FFFFFF;
+    }
+    .accordion__label:hover > .cross {
+      background-image: url('./images/white-plus.svg');
+    }
+  }
+
