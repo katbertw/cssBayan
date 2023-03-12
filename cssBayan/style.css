@@ -4,6 +4,11 @@
   color: #3E474F;
 }
 
+.accordion h1 {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
 .accordion__label {
   padding: 14px 18px;
 }
@@ -23,6 +28,10 @@
 .accordion__label:hover {
   background: #3E474F;
   color: #FFFFFF;
+}
+
+.accordion__label:active {
+  background: rgba(0, 0, 0, 0.8);
 }
 
 .cross {
