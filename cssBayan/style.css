@@ -25,10 +25,7 @@
   transition: background 0.1s;
 }
 
-.accordion__label:hover {
-  background: #3E474F;
-  color: #FFFFFF;
-}
+
 
 .accordion__label:active {
   background: rgba(0, 0, 0, 0.8);
@@ -42,9 +39,7 @@
   transition: 0.4s;
 }
 
-.accordion__label:hover > .cross {
-  background-image: url('./images/white-plus.svg');
-}
+
 
 .accordion__content {
 /*   display: none;
@@ -104,6 +99,17 @@
     }
     .accordion h1 {
       font-size: 3rem;
+    }
+  }
+
+  @media (hover: hover) {
+    /* when hover is supported */
+    .accordion__label:hover {
+      background: #3E474F;
+      color: #FFFFFF;
+    }
+    .accordion__label:hover > .cross {
+      background-image: url('./images/white-plus.svg');
     }
   }
 
