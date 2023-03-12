@@ -1,5 +1,5 @@
 .accordion {
-  max-width: 320px;
+  width: 100%;
   font-family: 'Space Mono', monospace;
   color: #3E474F;
 }
@@ -40,10 +40,13 @@
 .accordion__content {
 /*   display: none;
   transition: 0.4s; */
-  transition: height 0.5s ease-out;
+  transition: transform 0.4s ease-out;
   opacity: 0;
   height: 0;
   overflow: hidden;
+  transform:scaleY(0);
+  transform-origin: top;
+  text-align: center;
 }
 
 .accordion__content > img {
@@ -52,14 +55,14 @@
 
 .accordion__input {
   display: none;
-  
 }
 
 .accordion__input:checked ~ .accordion__content {
 /*   display: block; */
   opacity: 1;
-  height: 280px;
+  height: 100%;
   padding: 14px 18px;
+  transform:scaleY(1);
 }
 
 .accordion__input:checked + .accordion__label .cross {
@@ -68,8 +71,9 @@
 
 .accordion__label:hover ~ .accordion__content {
     opacity: 1;
-    height: 280px;
+    height: 100%;
     padding: 14px 18px;
+    transform:scaleY(1);
   }
 
 
