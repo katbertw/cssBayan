@@ -25,8 +25,6 @@
   transition: background 0.1s;
 }
 
-
-
 .accordion__label:active {
   background: rgba(0, 0, 0, 0.8);
 }
@@ -36,21 +34,18 @@
   height: 18px;
   background-image: url('./images/black-plus.svg');
   background-size: contain;
-  transition: 0.4s;
+  transition: 0.5s;
 }
 
-
-
 .accordion__content {
-/*   display: none;
-  transition: 0.4s; */
-  transition: transform 0.4s ease-out;
+  transition: transform 0.3s ease-out;
   opacity: 0;
   height: 0;
   overflow: hidden;
   transform:scaleY(0);
   transform-origin: top;
   text-align: center;
+
 }
 
 .accordion__content > img {
@@ -62,11 +57,15 @@
 }
 
 .accordion__input:checked ~ .accordion__content {
-/*   display: block; */
   opacity: 1;
   height: 100%;
   padding: 14px 18px;
   transform:scaleY(1);
+}
+
+.accordion__input:not(:checked) ~ .accordion__content {
+  opacity: 0;
+  transition: 0.3s;
 }
 
 .accordion__input:checked + .accordion__label .cross {
@@ -103,7 +102,6 @@
   }
 
   @media (hover: hover) {
-    /* when hover is supported */
     .accordion__label:hover {
       background: #3E474F;
       color: #FFFFFF;
